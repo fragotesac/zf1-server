@@ -160,7 +160,7 @@ class Zend_Server_Reflection_Class
     /**
      * Set namespace for this class
      *
-     * @param string $namespace
+     * @param string|null $namespace
      * @return void
      */
     public function setNamespace($namespace)

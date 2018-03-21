@@ -34,13 +34,13 @@ class Zend_Server_Reflection_ReturnValue
 {
     /**
      * Return value type
-     * @var string
+     * @var string|null
      */
     protected $_type;
 
     /**
      * Return value description
-     * @var string
+     * @var string|null
      */
     protected $_description;
 
@@ -59,7 +59,7 @@ class Zend_Server_Reflection_ReturnValue
     /**
      * Retrieve parameter type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -84,7 +84,7 @@ class Zend_Server_Reflection_ReturnValue
     /**
      * Retrieve parameter description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {

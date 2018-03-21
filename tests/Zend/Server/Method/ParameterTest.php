@@ -20,8 +20,6 @@
  * @version    $Id$
  */
 
-/** Zend_Server_Method_Parameter */
-require_once 'Zend/Server/Method/Parameter.php';
 
 /**
  * Test class for Zend_Server_Method_Parameter

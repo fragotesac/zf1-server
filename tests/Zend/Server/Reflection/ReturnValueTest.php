@@ -20,7 +20,6 @@
  * @version $Id$
  */
 
-require_once 'Zend/Server/Reflection/ReturnValue.php';
 
 /**
  * Test case for Zend_Server_Reflection_ReturnValue

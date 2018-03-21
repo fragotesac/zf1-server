@@ -20,7 +20,6 @@
  * @version $Id$
  */
 
-require_once 'Zend/Server/Reflection/Node.php';
 
 /**
  * Test case for Zend_Server_Reflection_Node

@@ -33,10 +33,20 @@
 class Zend_Server_Reflection_Prototype
 {
     /**
+     * @var Zend_Server_Reflection_ReturnValue
+     */
+    protected $_return;
+
+    /**
+     * @var Zend_Server_Reflection_Parameter[]|null
+     */
+    protected $_params;
+
+    /**
      * Constructor
      *
      * @param Zend_Server_Reflection_ReturnValue $return
-     * @param array $params
+     * @param Zend_Server_Reflection_Parameter[] $params
      * @return void
      */
     public function __construct(Zend_Server_Reflection_ReturnValue $return, $params = null)
@@ -61,7 +71,7 @@ class Zend_Server_Reflection_Prototype
     /**
      * Retrieve return type
      *
-     * @return string
+     * @return string|null
      */
     public function getReturnType()
     {
@@ -82,7 +92,7 @@ class Zend_Server_Reflection_Prototype
     /**
      * Retrieve method parameters
      *
-     * @return array Array of {@link Zend_Server_Reflection_Parameter}s
+     * @return Zend_Server_Reflection_Parameter[]|null Array of {@link Zend_Server_Reflection_Parameter}s
      */
     public function getParameters()
     {

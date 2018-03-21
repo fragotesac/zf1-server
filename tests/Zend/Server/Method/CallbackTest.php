@@ -20,8 +20,6 @@
  * @version    $Id$
  */
 
-/** Zend_Server_Method_Callback */
-require_once 'Zend/Server/Method/Callback.php';
 
 /**
  * Test class for Zend_Server_Method_Callback

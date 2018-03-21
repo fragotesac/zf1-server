@@ -20,8 +20,6 @@
  * @version    $Id$
  */
 
-/** Zend_Server_Method_Prototype */
-require_once 'Zend/Server/Method/Prototype.php';
 
 /**
  * Test class for Zend_Server_Method_Prototype

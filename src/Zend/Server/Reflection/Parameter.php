@@ -29,6 +29,7 @@
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version $Id$
+ * @method string getName() \ReflectionParameter::getName
  */
 class Zend_Server_Reflection_Parameter
 {
@@ -45,13 +46,13 @@ class Zend_Server_Reflection_Parameter
 
     /**
      * Parameter type
-     * @var string
+     * @var string|null
      */
     protected $_type;
 
     /**
      * Parameter description
-     * @var string
+     * @var string|null
      */
     protected $_description;
 
@@ -88,7 +89,7 @@ class Zend_Server_Reflection_Parameter
     /**
      * Retrieve parameter type
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -113,7 +114,7 @@ class Zend_Server_Reflection_Parameter
     /**
      * Retrieve parameter description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
