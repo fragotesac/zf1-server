@@ -1,3 +1,5 @@
+includes:
+    - phpstan-php8.php
 parameters:
     level: 8
     inferPrivatePropertyTypeFromConstructor: true
@@ -15,24 +17,30 @@ parameters:
         # only ReflectionMethod has this method on it
         - '#Call to an undefined method ReflectionFunction\|ReflectionMethod::getDeclaringClass\(\)\.#'
         -
-            message: '#Parameter \#1 \$function of function call_user_func_array expects callable\(\): .+ given\.#'
+            message: '#Parameter \#1 \$(function|callback) of function call_user_func_array expects callable\(\): .+ given\.#'
             path: %currentWorkingDirectory%/src/Zend/Server/Abstract.php
         -
-            message: '#Parameter \#1 \$function of function call_user_func_array expects callable\(\): .+ given\.#'
+            message: '#Parameter \#1 \$(function|callback) of function call_user_func_array expects callable\(\): .+ given\.#'
             path: %currentWorkingDirectory%/src/Zend/Server/Reflection/Class.php
         -
-            message: '#Parameter \#1 \$function of function call_user_func_array expects callable\(\): .+ given\.#'
+            message: '#Parameter \#1 \$(function|callback) of function call_user_func_array expects callable\(\): .+ given\.#'
             path: %currentWorkingDirectory%/src/Zend/Server/Reflection/Function/Abstract.php
         -
-            message: '#Parameter \#1 \$function of function call_user_func_array expects callable\(\): .+ given\.#'
+            message: '#Parameter \#1 \$(function|callback) of function call_user_func_array expects callable\(\): .+ given\.#'
             path: %currentWorkingDirectory%/src/Zend/Server/Reflection/Parameter.php
         # Defensive coding, can't be enforced by PHP typehints
         - '#Result of && is always false\.#'
         - '#Strict comparison using !== between null and null will always evaluate to false\.#'
-        - '#Parameter \#1 \$argument of class ReflectionClass constructor expects class-string<T of object>\|T of object, .+ given\.#'
-        -
-            message: '#Parameter \#1 \$args of method ReflectionClass<mixed>::newInstanceArgs\(\) expects array<int, mixed>, array given\.#'
-            path: './src/Zend/Server/Abstract.php'
+        - '#Parameter \#1 \$(argument|objectOrClass) of class ReflectionClass constructor expects class-string<T of object>\|T of object, .+ given\.#'
         -
             message: '#Parameter \#3 \$argv of class Zend_Server_Reflection_Function constructor expects array, array\|false\|null given\.#'
             path: './src/Zend/Server/Reflection.php'
+        # This method does exist, just not documented apparently
+        -
+            message: '#Call to an undefined method ReflectionType::getName\(\)\.#'
+            path: './src/Zend/Server/Reflection/Function/Abstract.php'
+            count: 1
+        -
+            message: '#Call to an undefined method ReflectionType::getName\(\)\.#'
+            path: './src/Zend/Server/Reflection/Parameter.php'
+            count: 1
